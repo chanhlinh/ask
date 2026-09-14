@@ -1,4 +1,5 @@
 name: Verify
+
 on:
   push:
   workflow_dispatch:
@@ -9,9 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
-        with: { php-version: '8.4', extensions: mbstring, xml, sqlite3, pdo_sqlite }
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, sqlite3, pdo_sqlite
       - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: npm }
+        with:
+          node-version: 22
+          cache: npm
       - run: composer install --no-interaction --prefer-dist
       - run: npm ci
       - run: php artisan test
