@@ -7,6 +7,15 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      APP_ENV: testing
+      APP_KEY: base64:ZDRhMzg1ZmYzMWJmOTI2NmEzYjg3ZTdlY2QxM2M1M2Y=
+      APP_URL: http://localhost
+      DB_CONNECTION: sqlite
+      DB_DATABASE: ':memory:'
+      CACHE_STORE: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
