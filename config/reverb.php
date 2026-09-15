@@ -35,7 +35,10 @@ return [
                     'scheme' => env('REVERB_SCHEME', 'https'),
                     'useTLS' => env('REVERB_SCHEME', 'https') === 'https',
                 ],
-                'allowed_origins' => [env('APP_URL')],
+                'allowed_origins' => [
+                    env('VITE_REVERB_HOST', 'ask.privilege.global'),
+                    parse_url(env('APP_URL', 'https://ask.privilege.global'), PHP_URL_HOST),
+                ],
                 'ping_interval' => env('REVERB_APP_PING_INTERVAL', 60),
                 'activity_timeout' => env('REVERB_APP_ACTIVITY_TIMEOUT', 30),
                 'max_message_size' => env('REVERB_APP_MAX_MESSAGE_SIZE', 10_000),
