@@ -1,11 +1,23 @@
 /* Presentation screen behavior */
 @media (min-width:621px){
+  html,body,#app{
+    min-height:100%;
+  }
+
+  body:has(.screen){
+    overflow:hidden;
+  }
+
   .screen{
+    height:100vh;
+    min-height:100vh;
+    overflow:hidden;
     background-attachment:fixed;
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
   }
+
   .screen-rail{
     position:sticky;
     top:0;
@@ -14,20 +26,57 @@
     min-height:100vh;
     overflow:hidden;
   }
+
   .screen-main{
-    min-height:100vh;
+    height:100vh;
+    min-height:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .screen-head{
+    flex:0 0 auto;
+  }
+
+  .screen-feed{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding-bottom:40px;
+    scrollbar-width:thin;
   }
 }
 
 @media (max-width:620px){
+  body:has(.screen){
+    overflow:auto;
+  }
+
   .screen{
+    height:auto;
+    min-height:100vh;
+    overflow:visible;
     background-attachment:scroll;
   }
+
   .screen-rail{
     position:relative;
     top:auto;
     height:auto;
     min-height:auto;
+    overflow:visible;
+  }
+
+  .screen-main{
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    display:block;
+  }
+
+  .screen-feed{
     overflow:visible;
   }
 }
