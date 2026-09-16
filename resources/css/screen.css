@@ -1,0 +1,33 @@
+/* Presentation screen behavior */
+@media (min-width:621px){
+  .screen{
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+  }
+  .screen-rail{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    min-height:100vh;
+    overflow:hidden;
+  }
+  .screen-main{
+    min-height:100vh;
+  }
+}
+
+@media (max-width:620px){
+  .screen{
+    background-attachment:scroll;
+  }
+  .screen-rail{
+    position:relative;
+    top:auto;
+    height:auto;
+    min-height:auto;
+    overflow:visible;
+  }
+}
