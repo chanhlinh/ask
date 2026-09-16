@@ -1,3 +1,4 @@
+@import './screen.css';
 /* Slido-inspired attendee UX, Privilege-branded */
 .public-app{max-width:680px;min-height:100dvh;margin:0 auto;padding:0 0 92px;background:#fff;color:#242424}
 .public-topbar{position:sticky;top:0;z-index:8;display:block;margin:0;padding:0;background:#9d7a39;color:#fff;border:0;box-shadow:0 1px 0 rgba(0,0,0,.08)}
